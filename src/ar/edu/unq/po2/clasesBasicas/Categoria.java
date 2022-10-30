@@ -1,20 +1,20 @@
 package ar.edu.unq.po2.clasesBasicas;
 
-public class Categoria {
-	private String nombre;
+//package ar.edu.unq.po2.TpFinal;
 
-	private String getNombre() {
-		return nombre;
+public class Categoria {
+
+	private String nombre; 
+	
+	public Categoria(String nombre) {
+		this.setNombre(nombre); 
+	}
+
+	public String getNombre() {
+		return this.nombre;
 	}
 
 	private void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public Categoria(String nombre) {
-		super();
-		this.setNombre(nombre);
-	}
-	
-	
 }

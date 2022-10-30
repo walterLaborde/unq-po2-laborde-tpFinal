@@ -1,37 +1,47 @@
-package ar.edu.unq.po2.clasesBasicas;
+package ar.edu.unq.po2.clasesBasicas;                         // ww borrar para compartir
+import ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.*;  // ww borrar para compartir
+
+//package ar.edu.unq.po2.TpFinal;
+//import ar.edu.unq.po2.TpFinal.StrategyRecomendacion.RecomendadorDesafios;
 
 public class Perfil {
-	private int cantidadDeMuestrasARecolectar;
-	private int dificultad;
-	private int recompensa;
 	
-	//getters and setters
-	private int getCantidadDeMuestrasARecolectar() {
-		return cantidadDeMuestrasARecolectar;
+	private int cantMuestrasARecolectar; 
+	private int dificultad; 
+	private int recompensasPreferidas;
+	private RecomendadorDesafios tipoDeRecomendacion;
+	
+	public Perfil(int cantMuestrasARecolectar, int dificultad, int recompensasPreferidas, RecomendadorDesafios tipoDeRecomendacion) {
+		
+		this.setCantMuestrasARecolectar(cantMuestrasARecolectar);
+		this.setDificultad(dificultad);
+		this.setRecompensasPreferidas(recompensasPreferidas);
+		this.setTipoDeRecomendacion(tipoDeRecomendacion);
 	}
-	private void setCantidadDeMuestrasARecolectar(int cantidadDeMuestrasARecolectar) {
-		this.cantidadDeMuestrasARecolectar = cantidadDeMuestrasARecolectar;
+	
+	public int getCantMuestrasARecolectar() {
+		return cantMuestrasARecolectar;
 	}
-	private int getDificultad() {
+	public void setCantMuestrasARecolectar(int cantMuestrasARecolectar) {
+		this.cantMuestrasARecolectar = cantMuestrasARecolectar;
+	}
+	public int getDificultad() {
 		return dificultad;
 	}
-	private void setDificultad(int dificultad) {
+	public void setDificultad(int dificultad) {
 		this.dificultad = dificultad;
 	}
-	private int getRecompensa() {
-		return recompensa;
+	public int getRecompensasPreferidas() {
+		return recompensasPreferidas;
 	}
-	private void setRecompensa(int recompensa) {
-		this.recompensa = recompensa;
+	public void setRecompensasPreferidas(int recompensasPreferidas) {
+		this.recompensasPreferidas = recompensasPreferidas;
 	}
-	
-	
-	public Perfil(int cantidadDeMuestrasARecolectar, int dificultad, int recompensa) {
-		super();
-		this.setCantidadDeMuestrasARecolectar(cantidadDeMuestrasARecolectar);
-		this.setDificultad(dificultad);
-		this.setRecompensa(recompensa);
+	public RecomendadorDesafios getTipoDeRecomendacion() {
+		return tipoDeRecomendacion;
 	}
-	
-	
+	public void setTipoDeRecomendacion(RecomendadorDesafios tipoDeRecomendacion) {
+		this.tipoDeRecomendacion = tipoDeRecomendacion;
+	} 
+
 }

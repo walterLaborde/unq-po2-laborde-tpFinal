@@ -1,36 +1,54 @@
 package ar.edu.unq.po2.clasesBasicas;
 
-import java.time.LocalDateTime;
+//package ar.edu.unq.po2.TpFinal;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Muestra {
-	private Coordenada coordenadasGeograficas;
-	private Usuario usuarioQueTomoMuestra;
-	private LocalDateTime fechaYHora;
+
+	private Coordenada coordenada; 
+	private Usuario usuario; 
+	private LocalDate fecha; 
+	private LocalTime hora;
 	
-	// getters and setters
-	private Coordenada getCoordenadasGeograficas() {
-		return coordenadasGeograficas;
+	public Muestra(Coordenada coordenada, Usuario usuario, LocalDate fecha,LocalTime hora) {
+		this.setCoordenada(coordenada);
+		this.setUsuario(usuario);
+		this.setFecha(fecha);
+		this.setHora(hora);
 	}
-	private void setCoordenadasGeograficas(Coordenada coordenadasGeograficas) {
-		this.coordenadasGeograficas = coordenadasGeograficas;
+
+	public Coordenada getCoordenada() {
+		return this.coordenada;
 	}
-	private Usuario getUsuarioQueTomoMuestra() {
-		return usuarioQueTomoMuestra;
+
+	private void setCoordenada(Coordenada coordenada) {
+		this.coordenada = coordenada;
 	}
-	private void setUsuarioQueTomoMuestra(Usuario usuarioQueTomoMuestra) {
-		this.usuarioQueTomoMuestra = usuarioQueTomoMuestra;
+
+	public Usuario getUsuario() {
+		return this.usuario;
 	}
-	private LocalDateTime getFechaYHora() {
-		return fechaYHora;
+
+	private void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
-	private void setFechaYHora(LocalDateTime fechaYHora) {
-		this.fechaYHora = fechaYHora;
+
+	public LocalDate getFecha() {
+		return this.fecha;
+	}
+
+	private void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+
+	public LocalTime getHora() {
+		return this.hora;
+	}
+
+	private void setHora(LocalTime hora) {
+		this.hora = hora;
 	}
 	
-	public Muestra(Coordenada coordenadasGeograficas, Usuario usuarioQueLaTomo, LocalDateTime fechaYHora) {
-		super();
-		this.setCoordenadasGeograficas(coordenadasGeograficas);
-		this.setUsuarioQueTomoMuestra(usuarioQueLaTomo);
-		this.setFechaYHora(fechaYHora);
-	}
 }
