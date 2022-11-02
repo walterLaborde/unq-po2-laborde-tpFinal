@@ -1,4 +1,5 @@
 package ar.edu.unq.po2.clasesBasicas;                 // w borrar para compartir
+import ar.edu.unq.po2.clasesBasicas.CompositeBusquedas.TipoDeBusqueda;
 import  ar.edu.unq.po2.clasesBasicas.StateDesafios.*; // w borrar para compartir
 //import  ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.*; // w borrar para compartir
 
@@ -17,7 +18,9 @@ public class Usuario {
 	private List<Muestra> muestras; 
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
-	private List<DesafioUsuario> desafiosUsuarios; 
+	private List<DesafioUsuario> desafiosUsuarios;
+	private AdministradorProyectos admProyectos;
+	private TipoDeBusqueda modoDeBuscar;
 	
 	public Usuario(Perfil perfil) {
 		
@@ -90,5 +93,17 @@ public class Usuario {
 
 	public void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
 		this.desafiosUsuarios = desafiosUsuario;
+	}
+
+	public AdministradorProyectos getAdmProyectos() {
+		return admProyectos;
+	}
+
+	public void setAdmProyectos(AdministradorProyectos admProyectos) {
+		this.admProyectos = admProyectos;
+	}
+	
+	public List<Proyecto> buscarProyectosPor(List<String> catOTit, TipoDeBusqueda modoDeBuscar) {
+		return admProyectos.buscarProyectosPor(catOTit,modoDeBuscar);
 	}
 }
