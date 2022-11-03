@@ -19,7 +19,6 @@ public class Usuario {
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
 	private List<DesafioUsuario> desafiosUsuarios;
-	private AdministradorProyectos admProyectos;
 	private TipoDeBusqueda modoDeBuscar;
 	
 	public Usuario(Perfil perfil) {
@@ -94,16 +93,8 @@ public class Usuario {
 	public void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
-
-	public AdministradorProyectos getAdmProyectos() {
-		return admProyectos;
-	}
-
-	public void setAdmProyectos(AdministradorProyectos admProyectos) {
-		this.admProyectos = admProyectos;
-	}
 	
-	public List<Proyecto> buscarProyectosPor(List<String> catOTit, TipoDeBusqueda modoDeBuscar) {
-		return admProyectos.buscarProyectosPor(catOTit,modoDeBuscar);
+	public List<Proyecto> buscarProyectosPor(String catOTit) {
+		return modoDeBuscar.buscarEnProyectos(catOTit);
 	}
 }

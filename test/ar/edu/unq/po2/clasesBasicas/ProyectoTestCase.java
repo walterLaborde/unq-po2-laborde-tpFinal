@@ -64,18 +64,27 @@ class ProyectoTestCase {
 	//setter y getter
 	
 	@Test
-	void testSetNombre() {
+	void testGetYSetNombre() {
 		//setup
-		proyect.getMuestrasRecolectadas();
+		
 		//excercise
 		proyect.setNombre("hola");
 		//verify
-		assertEquals("hola",proyect.getNombre());
+		assertEquals("hola", proyect.getNombre());
 	}
 	
+	@Test
+	void testGetYSetCategorias() {
+		//setup
+		List<Categoria> categTest = Arrays.asList(categoria1,categoria2);
+		//excercise
+		proyect.setCategorias(categTest);
+		//verify
+		assertEquals(categTest, proyect.getCategorias());
+	}	
 	
 	@Test
-	void testMuestrasRecolectadas() {
+	void testGetMuestrasRecolectadas() {
 		//setup
 		proyect.addMuestra(muestra1);
 		proyect.addMuestra(muestra2);
@@ -85,6 +94,8 @@ class ProyectoTestCase {
 		//verify
 		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
 	}
+	
+	
 	
 	@Test
 	void testGetParticipantes() {

@@ -23,8 +23,7 @@ public class Proyecto {
 		this.muestrasRecolectadas = new ArrayList<Muestra>(); 
 	}
 	
-	public void setNombre(String nombre) {
-		
+	public void setNombre(String nombre) {	
 		this.nombre = nombre; 
 	}
 	
@@ -32,16 +31,18 @@ public class Proyecto {
 		return this.nombre;
 	}
 	
-	public void setDescripcion(String descripcion) {
-		
+	public void setDescripcion(String descripcion) {	
 		this.descripcion = descripcion; 
 	}
 	
 	public void setCategorias(List<Categoria> categorias) {
-		
 		this.categorias = categorias; 
 	}
 	
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
 	public List<Muestra> getMuestrasRecolectadas() {
 		
 		return this.muestrasRecolectadas;

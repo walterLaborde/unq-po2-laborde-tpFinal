@@ -77,11 +77,10 @@ class UsuarioTestCase {
 	//@Test //ver como testeo este mensaje
 	void testDesafiosRecomendados() {
 		//setup
-		//List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
+		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
 		//excercise
 		user.desafiosRecomendados(); 
 		//verify
-		//assertEquals(desafioRecomendado,user.getDesafiosUsuario());
 		verify(perfilUser,times(1)).getTipoDeRecomendacion();
 	}
 	
@@ -102,8 +101,6 @@ class UsuarioTestCase {
 		//setup
 		List<DesafioUsuario> desafios1Y2 = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
 		user.setDesafiosUsuario(desafios1Y2);
-		//user.getDesafiosUsuario().add(desafiosUsuario1);
-		//user.getDesafiosUsuario().add(desafiosUsuario2);
 		//excercise
 		user.desafioFavorito(); 
 		//verify
@@ -150,4 +147,6 @@ class UsuarioTestCase {
 		//verify
 		assertEquals(desafiosUsuariosUser,user.getDesafiosUsuario());
 	}
+	
+	//TODO todo lo relacionado con el composite de busqueda de proyectos.
 }

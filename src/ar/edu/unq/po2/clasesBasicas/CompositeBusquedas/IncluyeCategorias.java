@@ -8,12 +8,22 @@ import ar.edu.unq.po2.clasesBasicas.Proyecto;
 public class IncluyeCategorias implements TipoDeBusqueda {
 
 	@Override
-	public List<Proyecto> buscarEnProyectos(AdministradorProyectos adm, List<String> loQueBusco) {
+	public List<Proyecto> buscarEnProyectos(String loQueBusco) {
 		
-		List<Proyecto> proyectos = adm.getProyectosDisponibles();
-		adm.getLoQueBusco().stream().forEach(texto -> proyectos.stream().map());
-		return null;
+		List<Proyecto> proyectos = 
+				AdministradorProyectos.getProyectosDisponibles()
+				.stream()
+				.filter(proyIncCat -> proyIncCat.getCategorias().contains(loQueBusco)).toList();
+		
+		return proyectos;
 	}
 
+	@Override
+	public void agregarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {
+	}
+
+	@Override
+	public void borrarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {
+	}
 	
 }

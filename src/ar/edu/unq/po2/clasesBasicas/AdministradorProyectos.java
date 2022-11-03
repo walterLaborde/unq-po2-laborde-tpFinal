@@ -7,14 +7,14 @@ import ar.edu.unq.po2.clasesBasicas.CompositeBusquedas.TipoDeBusqueda;
 public class AdministradorProyectos {
 	
 	private TipoDeBusqueda tipoDeBusqueda;
-	private List<String> loQueBusco;
-	private List<Proyecto> proyectosDisponibles;
+	private String loQueBusco;
+	private static List<Proyecto> proyectosDisponibles;
 	
 	public void AdministradorProyectos() {
 		this.setProyectosDisponibles(proyectosDisponibles);
 	}
 
-	public List<Proyecto> getProyectosDisponibles() {
+	public static List<Proyecto> getProyectosDisponibles() {
 		return proyectosDisponibles;
 	}
 
@@ -22,17 +22,12 @@ public class AdministradorProyectos {
 		this.proyectosDisponibles = proyectosDisponibles;
 	}
 	
-	public List<String> getLoQueBusco() {
+	public String getLoQueBusco() {
 		return loQueBusco;
 	}
 	
-	private void setLoQueBusco(List<String> loBuscado) {
-		this.getLoQueBusco().addAll(loBuscado);
+	private void setLoQueBusco(String loBuscado) {
+		this.loQueBusco = loBuscado;
 	}
 
-	public List<Proyecto> buscarProyectosPor(List<String> catOTit, TipoDeBusqueda modoDeBuscar) {
-		modoDeBuscar.buscarEnProyectos(this.getProyectosDisponibles(), catOTit);
-		return null;
-	}
-	
 }
