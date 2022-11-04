@@ -10,7 +10,7 @@ import org.mockito.Mockito.*;
 
 import ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.RecomendadorDesafios;
 
-class PerfilTest {
+class PerfilTestCase {
 
 	private Perfil perfil; // sut
 	private int cantMuestrasARecolectar; 
@@ -26,8 +26,43 @@ class PerfilTest {
 	}
 	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testGetCantMuestrasARecolectar() {
+		//setup
+		
+		//exercise
+		
+		//verify
+		assertEquals(10,perfil.getCantMuestrasARecolectar());
+	}
+	
+	@Test
+	void testSetCantMuestrasARecolectar() {
+		//setup
+		
+		//exercise
+		perfil.setCantMuestrasARecolectar(7);
+		//verify
+		assertEquals(7,perfil.getCantMuestrasARecolectar());
+	}	
+	
+	@Test
+	void testGetDificultad() {
+		//setup
+		
+		//exercise
+		
+		//verify
+		assertEquals(4,perfil.getDificultad());
+	}
+	
+	@Test
+	void testSetDificultad() {
+		//setup
+		
+		//exercise
+		perfil.setDificultad(2);
+		//verify
+		assertEquals(2,perfil.getDificultad());
 	}
 
 }
