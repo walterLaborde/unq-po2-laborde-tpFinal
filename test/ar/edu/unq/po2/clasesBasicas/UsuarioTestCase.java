@@ -71,7 +71,6 @@ class UsuarioTestCase {
 		//excercise
 		user.aceptarDesafio(desafiosUsuario1); 
 		//verify
-		user.g
 		verify(desafiosUsuario1).serAceptado();
 	}
 	
@@ -149,6 +148,8 @@ class UsuarioTestCase {
 		//verify
 		assertEquals(desafiosUsuariosUser,user.getDesafiosUsuario());
 	}
+	
+	
 	
 	//TODO todo lo relacionado con el composite de busqueda de proyectos.
 }

@@ -70,7 +70,7 @@ class ProyectoTestCase {
 		//excercise
 		proyect.setNombre("hola");
 		//verify
-		assertEquals("hola", proyect.getNombre());
+		assertEquals("hola", proyect.getTitulo());
 	}
 	
 	@Test
@@ -122,14 +122,34 @@ class ProyectoTestCase {
 	@Test
 	void testAddParticipante() {
 		//setup
-		List<Muestra> muestrasTest = Arrays.asList(muestra1);
+		List<Usuario> participantesTest = Arrays.asList(participante1);
 		//excercise
-		proyect.addMuestra(muestra1);
+		proyect.addParticipante(participante1);
 		//verify
-		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
+		assertEquals(participantesTest,proyect.getParticipantes());
 	}
 	
-	
-	
+	@Test
+	void testRemoveParticipante() {
+		//setup
+		List<Usuario> participantesTest = Arrays.asList(participante2);
+		//Exercise
+		proyect.addParticipante(participante1);
+		proyect.addParticipante(participante2);
+		proyect.removeParticipante(participante1);
+		//verify
+		assertEquals(participantesTest,proyect.getParticipantes());
+	}
+
+	@Test
+	void testGetYSetDesafios() {
+		//setup
+		List<Desafio> desafiosTest = Arrays.asList(desafioU1,desafioU2);
+		List<Desafio> desafiosEsperado = Arrays.asList(desafioU1,desafioU2);
+		//Exercise
+		proyect.setDesafios(desafiosTest);
+		//verify
+		assertEquals(desafiosEsperado,proyect.getDesafios());
+	}
 	
 }

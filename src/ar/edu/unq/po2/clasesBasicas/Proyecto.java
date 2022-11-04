@@ -5,6 +5,11 @@ package ar.edu.unq.po2.clasesBasicas;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unq.po2.tpfinal.Categoria;
+import ar.edu.unq.po2.tpfinal.Desafio;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.Usuario;
+
 public class Proyecto {
 
 	private String nombre; 
@@ -23,26 +28,21 @@ public class Proyecto {
 		this.muestrasRecolectadas = new ArrayList<Muestra>(); 
 	}
 	
-	public void setNombre(String nombre) {	
+	public void setNombre(String nombre) {
+		
 		this.nombre = nombre; 
 	}
 	
-	public String getNombre() {
-		return this.nombre;
-	}
-	
-	public void setDescripcion(String descripcion) {	
+	public void setDescripcion(String descripcion) {
+		
 		this.descripcion = descripcion; 
 	}
 	
 	public void setCategorias(List<Categoria> categorias) {
+		
 		this.categorias = categorias; 
 	}
 	
-	public List<Categoria> getCategorias() {
-		return categorias;
-	}
-
 	public List<Muestra> getMuestrasRecolectadas() {
 		
 		return this.muestrasRecolectadas;
@@ -72,8 +72,18 @@ public class Proyecto {
 		return this.desafios;
 	}
 
-	public void setProyectos(List<Desafio> desafios) {
+	public void setDesafios(List<Desafio> desafios) {
 		this.desafios = desafios;
+	}
+
+
+	public List<Categoria> getCategorias() {
+		return this.categorias;
+	}
+
+	public String getTitulo() {
+		
+		return this.nombre;
 	}
 
 }

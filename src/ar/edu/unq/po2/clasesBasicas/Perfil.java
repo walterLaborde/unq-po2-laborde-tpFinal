@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.clasesBasicas;                         // ww borrar para compartir
 import ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.*;  // ww borrar para compartir
+import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 
 //package ar.edu.unq.po2.TpFinal;
 //import ar.edu.unq.po2.TpFinal.StrategyRecomendacion.RecomendadorDesafios;
@@ -43,5 +44,4 @@ public class Perfil {
 	public void setTipoDeRecomendacion(RecomendadorDesafios tipoDeRecomendacion) {
 		this.tipoDeRecomendacion = tipoDeRecomendacion;
 	} 
-
 }
