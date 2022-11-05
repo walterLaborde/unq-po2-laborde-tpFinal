@@ -2,11 +2,7 @@ package ar.edu.unq.po2.clasesBasicas;                 // w borrar para compartir
 import ar.edu.unq.po2.clasesBasicas.CompositeBusquedas.TipoDeBusqueda;
 import  ar.edu.unq.po2.clasesBasicas.StateDesafios.*; // w borrar para compartir
 //import  ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.*; // w borrar para compartir
-import ar.edu.unq.po2.tpfinal.Desafio;
-import ar.edu.unq.po2.tpfinal.Muestra;
-import ar.edu.unq.po2.tpfinal.Perfil;
-import ar.edu.unq.po2.tpfinal.Proyecto;
-import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
+
 
 //package ar.edu.unq.po2.TpFinal;
 
