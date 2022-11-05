@@ -17,12 +17,14 @@ class PerfilTestCase {
 	private int dificultad; 
 	private int recompensasPreferidas;
 	
-	@Mock private RecomendadorDesafios recomendador;
+	@Mock private RecomendadorDesafios tipoDeRecomendacion;
+	@Mock private RecomendadorDesafios tipoDeRecomendacion2;
 	
 	@BeforeEach
 	public void setup() {
-		perfil = new Perfil(10, 4, 30, recomendador);
-		recomendador = mock(RecomendadorDesafios.class);
+		perfil = new Perfil(10, 4, 30, tipoDeRecomendacion);
+		tipoDeRecomendacion = mock(RecomendadorDesafios.class);
+		tipoDeRecomendacion2 = mock(RecomendadorDesafios.class);
 	}
 	
 	@Test
@@ -63,6 +65,46 @@ class PerfilTestCase {
 		perfil.setDificultad(2);
 		//verify
 		assertEquals(2,perfil.getDificultad());
+	}
+
+	@Test
+	void testGetRecompensasPreferidas() {
+		//setup
+		
+		//exercise
+		perfil.getRecompensasPreferidas();
+		//verify
+		assertEquals(30,perfil.getRecompensasPreferidas());
+	}
+	
+	@Test
+	void testSetRecompensasPreferidas() {
+		//setup
+		
+		//exercise
+		perfil.setRecompensasPreferidas(99);
+		//verify
+		assertEquals(99,perfil.getRecompensasPreferidas());
+	}
+
+	@Test
+	void testGetTipoDeRecomendacion() {
+		//setup
+		
+		//exercise
+		perfil.setTipoDeRecomendacion(tipoDeRecomendacion);
+		//verify
+		assertEquals(tipoDeRecomendacion,perfil.getTipoDeRecomendacion());
+	}
+	
+	@Test
+	void testSetTipoDeRecomendacion() {
+		//setup
+		
+		//exercise
+		perfil.setTipoDeRecomendacion(tipoDeRecomendacion2);
+		//verify
+		assertEquals(tipoDeRecomendacion2,perfil.getTipoDeRecomendacion());
 	}
 
 }
