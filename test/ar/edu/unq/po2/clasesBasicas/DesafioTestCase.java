@@ -62,6 +62,14 @@ class DesafioTestCase {
 		
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));
-	}}
+	}
+	
+	@Test
+	void testGetArea() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(area,desafio.getArea());
+	}
 
 }
