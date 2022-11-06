@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion; // w
 import ar.edu.unq.po2.clasesBasicas.*;                      // w
-
+import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
 
 //package ar.edu.unq.po2.TpFinal.StrategyRecomendacion;
 //import ar.edu.unq.po2.TpFinal.*;
@@ -12,59 +12,59 @@ import java.util.List;
 public abstract class RecomendadorDesafios {
 
 	public List<Desafio> desafiosARecomendar(Usuario usuario){
-			
-			List<Desafio> desafios = desafiosSegunUsuario(usuario); 
-			
-			
-			desafios.removeAll(dasafiosYaTomados(usuario)); 
-			
-			return desafios;  
-	}
-	
-	private List<Desafio> desafiosSegunUsuario(Usuario usuario){
 		
-		List<Desafio> desafios = new ArrayList<Desafio>();
+		List<Desafio> desafios = desafiosSegunUsuario(usuario); 
 		
-		usuario
-		    .getProyectos()
-			.stream()
-			.forEach(proyecto -> desafios.addAll(proyecto.getDesafios()));
 		
-		return desafios; 
-	}
+		desafios.removeAll(dasafiosYaTomados(usuario)); 
+		
+		return desafios;  
+}
 
-	private List<Desafio> dasafiosYaTomados(Usuario usuario) {
-			
-			return usuario.getDesafiosUsuario().stream().map(desafioUsuario -> desafioUsuario.getDesafio()).toList();
-	}
+public List<Desafio> desafiosSegunUsuario(Usuario usuario){
 	
-	public List<Desafio> ordenarPorCoincidencia(List<Desafio> desafios, Usuario usuario){
-		
-		List<Desafio> desafiosOrd = 
-		desafios
+	List<Desafio> desafios = new ArrayList<Desafio>();
+	
+	usuario
+	    .getProyectos()
 		.stream()
-		.sorted((desafio1, desafio2) -> this.coincidenciaCon(usuario, desafio1).compareTo(this.coincidenciaCon(usuario, desafio2)))
-		.toList(); 
-		
-		return desafiosOrd; 
-	}
+		.forEach(proyecto -> desafios.addAll(proyecto.getDesafios()));
 	
-	public Integer coincidenciaCon(Usuario usuario, Desafio desafio) {
-		
-		Integer difDificultad = Math.abs(desafio.getDificultad() - usuario.getPerfil().getDificultad()); 
-		Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - usuario.getPerfil().getCantMuestrasARecolectar()); 
-		Integer difRecompensa = Math.abs(desafio.getRecompensa() - usuario.getPerfil().getRecompensasPreferidas()); 
-		
-		return difDificultad + difMuestras + difRecompensa;
-	}
+	return desafios; 
+}
 
-	
-	public abstract List<Desafio> desafiosRecomendados(Usuario usuario);
+private List<Desafio> dasafiosYaTomados(Usuario usuario) {
+		
+		return usuario.getDesafiosUsuario().stream().map(desafioUsuario -> desafioUsuario.getDesafio()).toList();
+}
 
+public List<Desafio> ordenarPorCoincidencia(List<Desafio> desafios, Usuario usuario){
 	
-//	public Integer calcularDiferenciaEntre(Integer x, Integer y) {
-//		
-//		return Math.abs(x-y); 
-//	}
+	List<Desafio> desafiosOrd = 
+	desafios
+	.stream()
+	.sorted((desafio1, desafio2) -> this.coincidenciaCon(usuario.getPerfil(), desafio1).compareTo(this.coincidenciaCon(usuario.getPerfil(), desafio2)))
+	.toList(); 
+	
+	return desafiosOrd; 
+}
+
+public Integer coincidenciaCon(Perfil perfilUsuario, Desafio desafio) {
+	
+	Integer difDificultad = Math.abs(desafio.getDificultad() - perfilUsuario.getDificultad()); 
+	Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - perfilUsuario.getCantMuestrasARecolectar()); 
+	Integer difRecompensa = Math.abs(desafio.getRecompensa() - perfilUsuario.getRecompensasPreferidas()); 
+	
+	return difDificultad + difMuestras + difRecompensa;
+}
+
+
+public void agregarDesafiosRecomendados(Usuario usuario, List<Desafio> desafiosRecomendados) {
+	
+	desafiosRecomendados.stream().forEach(desafio -> usuario.getDesafiosUsuario().add(new DesafioUsuario(usuario, desafio)));
+}
+
+public abstract List<Desafio> desafiosRecomendados(Usuario usuario);
+
 	
 }

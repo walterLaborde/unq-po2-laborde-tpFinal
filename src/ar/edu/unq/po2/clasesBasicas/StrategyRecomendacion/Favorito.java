@@ -10,8 +10,13 @@ public class Favorito extends RecomendadorDesafios {
 	@Override
 	public List<Desafio> desafiosRecomendados(Usuario usuario) {
 		
-		return this.ordenarPorSimilitud(
-				this.los20ConMayorCoincidencia(usuario), usuario.desafioFavorito()).subList(0, 4);
+		List<Desafio> desafiosRecomendados = 
+			this.ordenarPorSimilitud(
+				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).subList(0, 4); 
+		
+		this.agregarDesafiosRecomendados(usuario, desafiosRecomendados);
+		
+		return desafiosRecomendados;
 	}
 	
 	public List<Desafio> ordenarPorSimilitud(List<Desafio> desafios, Desafio desafioFavorito) {
@@ -35,6 +40,15 @@ public class Favorito extends RecomendadorDesafios {
 	private List<Desafio> los20ConMayorCoincidencia(Usuario usuario) {
 		
 		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).subList(0, 19); 
+	}
+
+	public Desafio desafioFavoritoDe(Usuario usuario) {
+		
+		return usuario.getDesafiosUsuario()
+				.stream()
+				.max((d1, d2) -> (d1.getValoracion()).compareTo(d2.getValoracion()))
+				.get()
+				.getDesafio(); 
 	}
 
 }
