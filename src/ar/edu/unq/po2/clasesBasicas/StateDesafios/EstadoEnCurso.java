@@ -6,17 +6,17 @@ public class EstadoEnCurso extends EstadoDesafio{
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {
 		
-		if (this.porcentajeDeCompletitud(desafio) == 100) {
+		if (this.porcentajeDeCompletitud(desafio) == 1) {
 			desafio.setEstado(new EstadoCompleto());  
 		}
 		
-		return this.porcentajeDeCompletitud(desafio) == 100;
+		return this.porcentajeDeCompletitud(desafio) == 1;
 	}
 
 	@Override
 	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
 		
-		return desafio.cantidadDeMuestrasValidas() / desafio.getDesafio().getCantidadDeMuestras();
+		return (float)desafio.cantidadDeMuestrasValidas() / desafio.getDesafio().getCantidadDeMuestras();
 	}
 
 	@Override
