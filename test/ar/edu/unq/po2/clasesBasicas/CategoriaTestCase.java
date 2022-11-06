@@ -21,5 +21,11 @@ class CategoriaTestCase {
 	void testGetNombre() {
 		assertEquals("Ciencias Naturales",categoria.getNombre());
 	}
+	
+	@Test void integerConInt() {
+		Integer i = 2;
+		Integer x = 1;
+		assertTrue(i>x);
+	}
 
 }
