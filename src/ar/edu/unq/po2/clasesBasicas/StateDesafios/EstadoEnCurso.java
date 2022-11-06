@@ -1,7 +1,5 @@
 package ar.edu.unq.po2.clasesBasicas.StateDesafios;
 
-//package ar.edu.unq.po2.TpFinal.StateDesafios;
-
 
 public class EstadoEnCurso extends EstadoDesafio{
 
