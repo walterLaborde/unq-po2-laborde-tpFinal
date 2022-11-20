@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.clasesBasicas.StateDesafios; // w borrar para compartir
 import ar.edu.unq.po2.clasesBasicas.Desafio;        // w borrar para compartir
 import ar.edu.unq.po2.clasesBasicas.Usuario;        // w borrar para compartir
+import ar.edu.unq.po2.clasesBasicas.StateDesafios.*;
 
 import java.time.LocalDate;
 
@@ -9,7 +10,7 @@ public class DesafioUsuario {
 
 	private Usuario usuario; 
 	private Desafio desafio; 
-	private EstadoDesafio estado; 
+	private IEstadoDesafio estado; 
 	private Integer valoracion; 
 	private LocalDate fechaInicio; 
 	private LocalDate fechaCompletado; 
@@ -47,11 +48,11 @@ public class DesafioUsuario {
 		this.desafio = desafio;
 	}
 
-	public EstadoDesafio getEstado() {
+	public IEstadoDesafio getEstado() {
 		return estado;
 	}
 
-	public void setEstado(EstadoDesafio estado) {
+	public void setEstado(IEstadoDesafio estado) {
 		this.estado = estado;
 	}
 
@@ -84,5 +85,4 @@ public class DesafioUsuario {
 	public void setFechaCompletado(LocalDate fechaCompletado) {
 		this.fechaCompletado = fechaCompletado;
 	}
-	
 }

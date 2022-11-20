@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 //package ar.edu.unq.po2.TpFinal.StateDesafios;
 
-public class EstadoPendiente extends EstadoDesafio {
+public class EstadoPendiente implements IEstadoDesafio {
 
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {

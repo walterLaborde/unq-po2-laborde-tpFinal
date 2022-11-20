@@ -2,7 +2,6 @@ package ar.edu.unq.po2.clasesBasicas;                 // w borrar para compartir
 import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.*;
 import  ar.edu.unq.po2.clasesBasicas.StateDesafios.*; // w borrar para compartir
 
-
 //package ar.edu.unq.po2.TpFinal;
 
 import java.util.ArrayList;
@@ -16,8 +15,7 @@ public class Usuario {
 	private List<Muestra> muestras; 
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
-	private List<DesafioUsuario> desafiosUsuarios;
-	private AdministradorDeProyectos sistema; 
+	private List<DesafioUsuario> desafiosUsuarios; 
 	
 	public Usuario(Perfil perfil) {
 		
@@ -27,9 +25,8 @@ public class Usuario {
 		this.desafiosUsuarios =  new ArrayList<DesafioUsuario>();
 	}
 	
-	public void suscribirse(AdministradorDeProyectos admP, Proyecto proyecto) {
+	public void suscribirse(Proyecto proyecto) {
 		
-		this.setSistema(admP);
 		this.proyectos.add(proyecto); 
 		proyecto.addParticipante(this);
 	}
@@ -102,16 +99,9 @@ public class Usuario {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	
-	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion) {
+	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion, Sistema sistema) {
 		
 		return sistema.filtrarProyectos(condicion);
 	}
 
-	public AdministradorDeProyectos getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(AdministradorDeProyectos sistema) {
-		this.sistema = sistema;
-	}
 }

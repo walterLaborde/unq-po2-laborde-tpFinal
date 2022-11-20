@@ -2,7 +2,7 @@ package ar.edu.unq.po2.clasesBasicas.StateDesafios;
 
 //package ar.edu.unq.po2.TpFinal.StateDesafios;
 
-public class EstadoCompleto extends EstadoDesafio{
+public class EstadoCompleto implements IEstadoDesafio{
 
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {
