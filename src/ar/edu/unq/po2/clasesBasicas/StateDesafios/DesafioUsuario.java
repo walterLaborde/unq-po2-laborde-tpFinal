@@ -12,6 +12,7 @@ public class DesafioUsuario {
 	private EstadoDesafio estado; 
 	private Integer valoracion; 
 	private LocalDate fechaInicio; 
+	private LocalDate fechaCompletado; 
 	
 	public DesafioUsuario(Usuario usuario, Desafio desafio) {
 		
@@ -23,7 +24,11 @@ public class DesafioUsuario {
 	
 	public int cantidadDeMuestrasValidas() {
 		
-		return this.getUsuario().getMuestras().stream().filter(muestra -> this.getDesafio().esMuestraValida(muestra)).toList().size(); 
+		return this.getUsuario()
+					.getMuestras()
+					.stream().filter(muestra -> this.getDesafio().esMuestraValida(muestra))
+					.toList()
+					.size(); 
 	}
 
 	public Usuario getUsuario() {
@@ -66,10 +71,18 @@ public class DesafioUsuario {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public void serAceptado() {
+	public void serAceptado() throws Exception {
 		
 		this.getEstado().serAceptado(this); 
 		
+	}
+
+	public LocalDate getFechaCompletado() {
+		return fechaCompletado;
+	}
+
+	public void setFechaCompletado(LocalDate fechaCompletado) {
+		this.fechaCompletado = fechaCompletado;
 	}
 	
 }
