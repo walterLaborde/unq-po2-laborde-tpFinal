@@ -1,7 +1,6 @@
 package ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos;
 
-import ar.edu.unq.po2.tpfinal.Proyecto;
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
+import ar.edu.unq.po2.clasesBasicas.*;
 
 public class IncluyeTextoEnTitulo extends CondicionDeBusqueda {
 

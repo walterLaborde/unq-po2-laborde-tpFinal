@@ -2,10 +2,7 @@ package ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos;
 
 import java.util.List;
 
-import ar.edu.unq.po2.clasesBasicas.AdministradorProyectos;
-import ar.edu.unq.po2.clasesBasicas.Proyecto;
-import ar.edu.unq.po2.tpfinal.Categoria;
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
+import ar.edu.unq.po2.clasesBasicas.*;
 
 public class IncluyeCategorias extends CondicionDeBusqueda{
 	

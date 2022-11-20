@@ -1,6 +1,5 @@
 package ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos;
 
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
 
 public abstract class CompuestoBinario extends CondicionDeBusqueda {
 	
