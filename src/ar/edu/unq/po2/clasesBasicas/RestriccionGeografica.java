@@ -1,7 +1,5 @@
 package ar.edu.unq.po2.clasesBasicas;
 
-import ar.edu.unq.po2.tpfinal.Coordenada;
-
 public class RestriccionGeografica extends Coordenada {
 	
 	private int radio;

@@ -3,11 +3,9 @@ package ar.edu.unq.po2.clasesBasicas;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.TipoDeBusqueda;
-import ar.edu.unq.po2.tpfinal.Proyecto;
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
+import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.*;
 
-public class AdministradorProyectos {
+public class AdministradorDeProyectos {
 	
 	private List<Proyecto> proyDisponibles;
 	

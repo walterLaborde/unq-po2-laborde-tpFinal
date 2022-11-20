@@ -1,13 +1,10 @@
 package ar.edu.unq.po2.clasesBasicas;                                       // w
-import ar.edu.unq.po2.clasesBasicas.RestriccionTemporal.TipoDeRestriccion;
-import ar.edu.unq.po2.tpfinal.Muestra;
-import ar.edu.unq.po2.tpfinal.RestriccionGeografica;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
+import ar.edu.unq.po2.clasesBasicas.RestriccionTemporal.*;
 
 //package ar.edu.unq.po2.TpFinal;
 //import ar.edu.unq.po2.TpFinal.CompositeRestriccion.*;
 
-public class Desafio implements ElementoDeLudificacion {
+public class Desafio {
 		
 	private RestriccionGeografica area; 
 	private Restriccion restriccion; 
