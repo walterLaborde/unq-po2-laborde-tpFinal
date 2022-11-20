@@ -8,17 +8,17 @@ import java.util.List;
 public class RestriccionMixta extends Restriccion{
 	//comentario para pushear
 	
-	private List<TipoDeRestriccion> restricciones;
+	private List<Restriccion> restricciones;
 	
-	public RestriccionMixta(List<TipoDeRestriccion> restricciones) {
+	public RestriccionMixta(List<Restriccion> restricciones) {
 		this.setRestricciones(restricciones);
 	}
 
-	public List<TipoDeRestriccion> getRestricciones() {
+	public List<Restriccion> getRestricciones() {
 		return this.restricciones;
 	}
 
-	public void setRestricciones(List<TipoDeRestriccion> restricciones) {
+	public void setRestricciones(List<Restriccion> restricciones) {
 		this.restricciones = restricciones;
 	}
 
@@ -28,12 +28,12 @@ public class RestriccionMixta extends Restriccion{
 	}
 
 	@Override
-	public void agregarRestriccion(TipoDeRestriccion restriccion) {
+	public void agregarRestriccion(Restriccion restriccion) {
 		this.getRestricciones().add(restriccion);
 	}
 
 	@Override
-	public void borrarRestriccion(TipoDeRestriccion restriccion) {
+	public void borrarRestriccion(Restriccion restriccion) {
 		this.getRestricciones().remove(restriccion);
 	}
 }

@@ -37,11 +37,11 @@ public class RangoDeFechas extends Restriccion{
 	}
 
 	@Override
-	public void agregarRestriccion(TipoDeRestriccion restriccion) {
+	public void agregarRestriccion(Restriccion restriccion) {
 	}
 
 	@Override
-	public void borrarRestriccion(TipoDeRestriccion restriccion) {
+	public void borrarRestriccion(Restriccion restriccion) {
 	}
 
 
