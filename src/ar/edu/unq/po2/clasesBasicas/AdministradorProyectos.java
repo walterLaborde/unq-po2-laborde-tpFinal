@@ -1,33 +1,37 @@
 package ar.edu.unq.po2.clasesBasicas;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unq.po2.clasesBasicas.CompositeBusquedas.TipoDeBusqueda;
+import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.TipoDeBusqueda;
+import ar.edu.unq.po2.tpfinal.Proyecto;
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
 
 public class AdministradorProyectos {
 	
-	private TipoDeBusqueda tipoDeBusqueda;
-	private String loQueBusco;
-	private static List<Proyecto> proyectosDisponibles;
+	private List<Proyecto> proyDisponibles;
 	
-	public void AdministradorProyectos() {
-		this.setProyectosDisponibles(proyectosDisponibles);
+	public AdministradorDeProyectos() {
+		
+		this.proyDisponibles = new ArrayList<Proyecto>(); 
+	}
+	
+	public void addProyecto(Proyecto proyecto) {
+		
+		this.getProyDisponibles().add(proyecto);
 	}
 
-	public static List<Proyecto> getProyectosDisponibles() {
-		return proyectosDisponibles;
+	public List<Proyecto> getProyDisponibles() {
+		return proyDisponibles;
 	}
 
-	private void setProyectosDisponibles(List<Proyecto> proyectosDisponibles) {
-		this.proyectosDisponibles = proyectosDisponibles;
+	public void setProyDisponibles(List<Proyecto> proyDisponibles) {
+		this.proyDisponibles = proyDisponibles;
 	}
 	
-	public String getLoQueBusco() {
-		return loQueBusco;
-	}
-	
-	private void setLoQueBusco(String loBuscado) {
-		this.loQueBusco = loBuscado;
+	public List<Proyecto> filtrarProyectos(CondicionDeBusqueda condicion) {
+		
+		return this.getProyDisponibles().stream().filter(proyecto -> condicion.seCumple(proyecto)).toList();
 	}
 
 }

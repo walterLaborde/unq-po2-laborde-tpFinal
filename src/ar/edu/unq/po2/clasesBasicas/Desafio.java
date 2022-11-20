@@ -1,5 +1,8 @@
 package ar.edu.unq.po2.clasesBasicas;                                       // w
-import ar.edu.unq.po2.clasesBasicas.CompositeRestriccion.TipoDeRestriccion; // w
+import ar.edu.unq.po2.clasesBasicas.RestriccionTemporal.TipoDeRestriccion;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.RestriccionGeografica;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
 
 //package ar.edu.unq.po2.TpFinal;
 //import ar.edu.unq.po2.TpFinal.CompositeRestriccion.*;
@@ -7,12 +10,12 @@ import ar.edu.unq.po2.clasesBasicas.CompositeRestriccion.TipoDeRestriccion; // w
 public class Desafio implements ElementoDeLudificacion {
 		
 	private RestriccionGeografica area; 
-	private TipoDeRestriccion restriccion; 
+	private Restriccion restriccion; 
 	private int cantidadDeMuestras; 
 	private int dificultad; 
 	private int recompensa; 
 	
-	public Desafio(RestriccionGeografica area, TipoDeRestriccion restriccion, int cant, int dif, int recompensa) {
+	public Desafio(RestriccionGeografica area, Restriccion restriccion, int cant, int dif, int recompensa) {
 		
 		this.setArea(area);
 		this.setRestriccion(restriccion);
@@ -25,8 +28,8 @@ public class Desafio implements ElementoDeLudificacion {
 	public RestriccionGeografica getArea() {
 		return area;
 	}
-	public void setArea(RestriccionGeografica area2) {
-		this.area = area2;
+	public void setArea(RestriccionGeografica area) {
+		this.area = area;
 	}
 	public int getCantidadDeMuestras() {
 		return cantidadDeMuestras;
@@ -46,25 +49,17 @@ public class Desafio implements ElementoDeLudificacion {
 	public void setRecompensa(int recompensa) {
 		this.recompensa = recompensa;
 	}
-//	public Integer coincidenciaCon(Usuario usuario) {
-//	// esto no debería estar aca, pero por ahora sirve. 
-//		
-//		Integer difDificultad = Math.abs(this.getDificultad() - usuario.getPerfil().getDificultad()); 
-//		Integer difMuestras = Math.abs(this.getCantidadDeMuestras() - usuario.getPerfil().getCantMuestrasARecolectar()); 
-//		Integer difRecompensa = Math.abs(this.getRecompensa() - usuario.getPerfil().getRecompensasPreferidas()); 
-//		
-//		return difDificultad + difMuestras + difRecompensa;
-//	}
-	public TipoDeRestriccion getRestriccion() {
+
+	public Restriccion getRestriccion() {
 		return restriccion;
 	}
-	public void setRestriccion(TipoDeRestriccion restriccion) {
+	public void setRestriccion(Restriccion restriccion) {
 		this.restriccion = restriccion;
 	}
 	
 	public boolean esMuestraValida(Muestra muestra) {
 	
-		return this.getArea().contiene(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
+		return this.getArea().seCumple(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
 	}
 	
 	

@@ -1,13 +1,15 @@
 package ar.edu.unq.po2.clasesBasicas.StateDesafios;
 
+import java.time.LocalDate;
 
 public class EstadoEnCurso extends EstadoDesafio{
 
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {
 		
-		if (this.porcentajeDeCompletitud(desafio) == 1) {
-			desafio.setEstado(new EstadoCompleto());  
+		if (this.porcentajeDeCompletitud(desafio) == 1.00f) {
+			desafio.setEstado(new EstadoCompleto());
+			desafio.setFechaCompletado(LocalDate.now());
 		}
 		
 		return this.porcentajeDeCompletitud(desafio) == 1;

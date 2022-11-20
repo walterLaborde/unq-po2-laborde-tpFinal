@@ -1,6 +1,9 @@
 package ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion; // w
 import ar.edu.unq.po2.clasesBasicas.*;                      // w
 import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
+import ar.edu.unq.po2.tpfinal.Desafio;
+import ar.edu.unq.po2.tpfinal.Perfil;
+import ar.edu.unq.po2.tpfinal.Usuario;
 
 //package ar.edu.unq.po2.TpFinal.StrategyRecomendacion;
 //import ar.edu.unq.po2.TpFinal.*;

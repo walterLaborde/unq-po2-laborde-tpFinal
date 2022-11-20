@@ -1,10 +1,10 @@
-package ar.edu.unq.po2.clasesBasicas.CompositeRestriccion;
+package ar.edu.unq.po2.clasesBasicas.RestriccionTemporal;
 
 //package ar.edu.unq.po2.TpFinal.CompositeRestriccion;
 
 import java.time.LocalDate;
 
-public class DiasHabiles extends TipoDeRestriccion{
+public class DiasHabiles extends Restriccion{
 
 	@Override
 	public boolean estaHabilitado(LocalDate fecha) {

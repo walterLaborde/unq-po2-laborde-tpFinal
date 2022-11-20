@@ -1,11 +1,11 @@
-package ar.edu.unq.po2.clasesBasicas.CompositeRestriccion;
+package ar.edu.unq.po2.clasesBasicas.RestriccionTemporal;
 
 //package ar.edu.unq.po2.TpFinal.CompositeRestriccion;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class RestriccionMixta extends TipoDeRestriccion{
+public class RestriccionMixta extends Restriccion{
 	//comentario para pushear
 	
 	private List<TipoDeRestriccion> restricciones;

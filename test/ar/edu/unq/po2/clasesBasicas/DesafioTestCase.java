@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.clasesBasicas.CompositeRestriccion.TipoDeRestriccion;
+import ar.edu.unq.po2.clasesBasicas.RestriccionTemporal.TipoDeRestriccion;
 
 
 

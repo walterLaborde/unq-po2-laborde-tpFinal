@@ -1,14 +1,10 @@
-package ar.edu.unq.po2.clasesBasicas.CompositeRestriccion;
+package ar.edu.unq.po2.clasesBasicas.RestriccionTemporal;
 
 //package ar.edu.unq.po2.TpFinal.CompositeRestriccion;
 
 import java.time.LocalDate;
 
-public class FinDeSemana extends TipoDeRestriccion {
-	
-	public FinDeSemana() {
-		
-	}
+public class FinDeSemana extends Restriccion {
 	
 	@Override
 	public boolean estaHabilitado(LocalDate fecha) {

@@ -1,8 +1,14 @@
 package ar.edu.unq.po2.clasesBasicas;                 // w borrar para compartir
-import ar.edu.unq.po2.clasesBasicas.CompositeBusquedas.TipoDeBusqueda;
+import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.TipoDeBusqueda;
 import  ar.edu.unq.po2.clasesBasicas.StateDesafios.*; // w borrar para compartir
 //import  ar.edu.unq.po2.clasesBasicas.StrategyRecomendacion.*; // w borrar para compartir
-
+import ar.edu.unq.po2.tpfinal.AdministradorDeProyectos;
+import ar.edu.unq.po2.tpfinal.Desafio;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.Perfil;
+import ar.edu.unq.po2.tpfinal.Proyecto;
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
+import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
 
 //package ar.edu.unq.po2.TpFinal;
 
@@ -18,7 +24,7 @@ public class Usuario {
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
 	private List<DesafioUsuario> desafiosUsuarios;
-	private TipoDeBusqueda modoDeBuscar;
+	private AdministradorDeProyectos sistema; 
 	
 	public Usuario(Perfil perfil) {
 		
@@ -28,23 +34,32 @@ public class Usuario {
 		this.desafiosUsuarios =  new ArrayList<DesafioUsuario>();
 	}
 	
-	public void suscribirse(Proyecto proyecto) {
+	public void suscribirse(AdministradorDeProyectos admP, Proyecto proyecto) {
 		
+		this.setSistema(admP);
 		this.proyectos.add(proyecto); 
 		proyecto.addParticipante(this);
 	}
 	
-	public void aceptarDesafio(DesafioUsuario desafio) {
+	public void desuscribirse(Proyecto proyecto) {
+		
+		this.getProyectos().remove(proyecto); 
+		proyecto.desuscribirParticipante(this); 
+	}
+	
+	public void aceptarDesafio(DesafioUsuario desafio) throws Exception {
 		
 		desafio.serAceptado(); 
 	}
 	
+	public void rechazarDesafio(DesafioUsuario desafio) {
+	
+		this.getDesafiosUsuario().remove(desafio); 
+	}
+	
 	public List<Desafio> desafiosRecomendados(){
 		
-		List<Desafio> desafiosRecomendados = this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
-		desafiosRecomendados.stream().forEach(desafio -> this.getDesafiosUsuario().add(new DesafioUsuario(this, desafio)));
-		
-		return desafiosRecomendados; 
+		return this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
 	}
 
 	public void valorarDesafio(DesafioUsuario desafio, Integer valoracion) {
@@ -52,13 +67,14 @@ public class Usuario {
 		desafio.setValoracion(valoracion);
 	}
 	
-	public Desafio desafioFavorito() {
+	public void enviarMuestra(Muestra muestra, Proyecto proyecto) {
 		
-		return this.getDesafiosUsuario()
-				.stream()
-				.max((d1, d2) -> (d1.getValoracion()).compareTo(d2.getValoracion()))
-				.get()
-				.getDesafio(); 
+		proyecto.addMuestra(muestra);
+	}
+	
+	public void recolectarMuestra(Muestra muestra) {
+		
+		this.getMuestras().add(muestra); 
 	}
 	
 	public Perfil getPerfil() {
@@ -93,7 +109,16 @@ public class Usuario {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	
-	public List<Proyecto> buscarProyectosPor(String catOTit) {
-		return modoDeBuscar.buscarEnProyectos(catOTit);
+	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion) {
+		
+		return sistema.filtrarProyectos(condicion);
+	}
+
+	public AdministradorDeProyectos getSistema() {
+		return sistema;
+	}
+
+	public void setSistema(AdministradorDeProyectos sistema) {
+		this.sistema = sistema;
 	}
 }
