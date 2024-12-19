@@ -2,6 +2,7 @@ package ar.edu.unq.po2.clasesBasicas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import ar.edu.unq.po2.clasesBasicas.BusquedaDeProyectos.*;
 
@@ -29,7 +30,11 @@ public class Sistema {
 	
 	public List<Proyecto> filtrarProyectos(CondicionDeBusqueda condicion) {
 		
-		return this.getProyDisponibles().stream().filter(proyecto -> condicion.seCumple(proyecto)).toList();
+		return condicion.seCumple(this.getProyDisponibles());
+
+		//List<Categoria> catDeProyectos = this.getProyDisponibles().stream().map(proyecto -> proyecto.getCategorias()).toList();
+		
+		//return this.getProyDisponibles().stream().filter(proyecto -> condicion.seCumple(proyecto)).toList();
 	}
 
 }
