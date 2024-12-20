@@ -6,7 +6,7 @@ import ar.edu.unq.po2.clasesBasicas.Proyecto;
 
 public abstract class CondicionDeBusqueda {
 	
-	public abstract List<Proyecto> seCumple(List<Proyecto> proyectos);
+	public abstract boolean seCumple(List<Proyecto> proyectos);
 	
 
 }

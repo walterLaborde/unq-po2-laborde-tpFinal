@@ -22,7 +22,7 @@ public class ExcluyeCategorias extends CondicionDeBusqueda{
 	}
 
 	@Override
-	public List<Proyecto> seCumple(Proyecto proyecto) {
+	public boolean seCumple(List<Proyecto> proyecto) {
 		
 		return !this.getCategorias().stream().anyMatch(categoria -> proyecto.getCategorias().contains(categoria));
 	}

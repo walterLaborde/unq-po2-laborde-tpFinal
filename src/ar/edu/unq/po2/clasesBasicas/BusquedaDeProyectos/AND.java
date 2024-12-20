@@ -11,7 +11,7 @@ public class AND extends CompuestoBinario{
 	}
 
 	@Override
-	public boolean seCumple(Proyecto proyecto) {
+	public boolean seCumple(List<Proyecto> proyecto) {
 		
 		return this.getCondicion1().seCumple(proyecto) && this.getCondicion2().seCumple(proyecto);
 	}
